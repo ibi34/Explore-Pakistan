@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Dream Tour</title>
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+<nav class="navbar navbar-expand-lg p-0  ">
+  <div class="container-fluid">
+
+    <!-- Logo Left -->
+    <a class="navbar-brand" href="index.html">
+      <img src="imges/main logo.png"
+           alt="Explore Pakistan Logo" class="img-fluid ms-5" style="height:90px;">
+    </a>
+
+    <!-- Toggler for mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarRightMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Right Menu -->
+    <div class="collapse navbar-collapse mt-auto" id="navbarRightMenu">
+      <ul class="navbar-nav gap-4 ms-auto mb-2 mb-lg-0     customnav"> 
+        <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Deals</a></li>
+
+        <!-- Destinations Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Destinations</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="azad.html">Azad Kashmir Tours</a></li>
+            <li><a class="dropdown-item" href="chitral.html">Chitral Valley Tours</a></li>
+            <li><a class="dropdown-item" href="#">Fairy Meadows Tours</a></li>
+            <li><a class="dropdown-item" href="hunza.html">Hunza Valley Tours</a></li>
+            <li><a class="dropdown-item" href="#">Murree Tours</a></li>
+            <li><a class="dropdown-item" href="#">Naran Kaghan Tours</a></li>
+            <li><a class="dropdown-item" href="#">Skardu Valley Tours</a></li>
+            <li><a class="dropdown-item" href="#">Swat Valley Tours</a></li>
+          </ul>
+        </li>
+
+        <!-- Tour Type Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Tour Type</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Family Tours</a></li>
+            <li><a class="dropdown-item" href="#">Honeymoon Tours</a></li>
+            <li><a class="dropdown-item" href="#">Adventure Tours</a></li>
+            <li><a class="dropdown-item" href="#">Group Tours</a></li>
+            <li><a class="dropdown-item" href="#">Luxury Tours</a></li>
+          </ul>
+        </li>
+
+<!--Search bar-->
+<li class="nav-item ms-4">
+  <div class="search-wrapper">
+    <!-- Search Icon Button -->
+    <button class="search-button" type="button" style="background:none; border:none; cursor:pointer; padding:5px;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#49954b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+    </button>
+
+    <!-- Hidden Input Field -->
+    <input type="text" class="search-input" placeholder="Search...">
+  </div>
+</li>
+
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+      
+
+    </div>
+  </div>
+</nav>
+
+
+
+    <div class="container-fluid tour-booking-section" id="book-tour">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+        <div class="booking-form-wrapper">
+          
+          <div class="booking-header">
+            <h2>Book Your Dream Tour</h2>
+            <p>Fill out the form below and we'll arrange the perfect trip for you!</p>
+          </div>
+
+          <form action="#" method="POST">
+            <div class="row">
+              <div class="col-12 col-md-6 form-group">
+                <label>Full Name</label>
+                <div class="custom-input-box">
+                  <i class="bi bi-person-fill"></i>
+                  <input type="text" placeholder="Ali Khan" required>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 form-group">
+                <label>Email Address</label>
+                <div class="custom-input-box">
+                  <i class="bi bi-envelope-fill"></i>
+                  <input type="email" placeholder="name@example.com" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12 col-md-6 form-group">
+                <label>Phone Number</label>
+                <div class="custom-input-box">
+                  <i class="bi bi-telephone-fill"></i>
+                  <input type="tel" placeholder="+92 300 0000000" required>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 form-group">
+                <label>Destination</label>
+                <div class="custom-input-box">
+                  <i class="bi bi-geo-alt-fill"></i>
+                  <select required>
+                    <option value="" selected disabled>Select Destination...</option>
+                    <option value="hunza">Hunza Valley</option>
+                    <option value="skardu">Skardu Valley</option>
+                    <option value="naran">Naran Kaghan</option>
+                    <option value="swat">Swat Valley</option>
+                    <option value="fairy_meadows">Fairy Meadows</option>
+                    <option value="murree">Murree</option>
+                    <option value="azad_kashmir">Azad Kashmir</option>
+                    <option value="chitral">Chitral Valley</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12 col-md-6 form-group">
+                <label>Travel Date</label>
+                <div class="custom-input-box">
+                  <i class="bi bi-calendar-event-fill"></i>
+                  <input type="date" required>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 form-group">
+                <label>Number of Travelers</label>
+                <div class="custom-input-box">
+                  <i class="bi bi-people-fill"></i>
+                  <input type="number" min="1" placeholder="e.g., 2" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12 form-group">
+                <label>Special Requests (Optional)</label>
+                <div class="custom-input-box">
+                  <i class="bi bi-chat-text-fill textarea-icon"></i>
+                  <textarea rows="3" placeholder="Any specific requirements for your trip?"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12">
+                <button type="submit" class="booking-btn">
+                  <i class="bi bi-send-fill"></i> Confirm Booking
+                </button>
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- Footer Section -->
+<footer class="footersection mt-5">
+  <div class="container py-5">
+    <div class="row">
+
+      <!-- Logo & About -->
+      <div class="col-12 col-md-4 mb-4 footer">
+        <img src="imges/fottor logo.png" alt="Explore Pakistan Logo" class="img-fluid mb-3" style="height:70px;">
+        <p>Explore Pakistan is your ultimate travel guide to discover the beauty, culture, and adventure of Pakistan.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-6 col-md-2 mb-4">
+        <h5>Quick Links</h5>
+        <ul class="footer-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Destinations</a></li>
+          <li><a href="#">Tour Packages</a></li>
+          <li><a href="#">Deals</a></li>
+        </ul>
+      </div>
+
+      <!-- Destinations -->
+      <div class="col-6 col-md-2 mb-4">
+        <h5>Destinations</h5>
+        <ul class="footer-links">
+          <li><a href="#">Hunza Valley</a></li>
+          <li><a href="#">Skardu Valley</a></li>
+          <li><a href="#">Naran Kaghan</a></li>
+          <li><a href="#">Swat Valley</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-12 col-md-4 mb-4">
+        <h5>Contact Us</h5>
+        <p>Email: ibitanoli12@gmail.com</p>
+        <p>Phone: +92 316 4155810</p>
+        <div class="social-icons">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-twitter"></i></a>
+        </div>
+      </div>
+
+    </div>
+    <hr>
+    <p class="text-center mt-3">&copy; 2026 Explore Pakistan. All rights reserved.</p>
+  </div>
+</footer>
+
+
+
+<!--Javascript links-->
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

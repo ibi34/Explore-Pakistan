@@ -414,19 +414,121 @@ nav {
 
 
 
+/* =========================================
+   Tour Booking Form Section Styling
+   ========================================= */
 
-
-
-
-
-
-.fade-up {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+.tour-booking-section {
+  background-color: #f8faf8; /* Light grey/greenish background */
+  padding: 80px 0;
 }
 
-.fade-up.show {
-  opacity: 1;
-  transform: translateY(0);
+.booking-form-wrapper {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Soft shadow for 3D effect */
+}
+
+.booking-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.booking-header h2 {
+  color: #49954b;
+  font-weight: 700;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.booking-header p {
+  color: #6c757d;
+  font-size: 16px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Custom Input Box with Icon */
+.custom-input-box {
+  position: relative;
+}
+
+.custom-input-box i {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #49954b;
+  font-size: 18px;
+}
+
+/* Adjusting icon position for textarea specifically */
+.custom-input-box i.textarea-icon {
+  top: 20px;
+  transform: none;
+}
+
+.custom-input-box input,
+.custom-input-box select,
+.custom-input-box textarea {
+  width: 100%;
+  padding: 12px 15px 12px 45px; /* 45px left padding to make space for the icon */
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #495057;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Focus effect on inputs */
+.custom-input-box input:focus,
+.custom-input-box select:focus,
+.custom-input-box textarea:focus {
+  border-color: #49954b;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(73, 149, 75, 0.2); /* Glow effect */
+}
+
+/* Submit Button */
+.booking-btn {
+  background-color: #49954b;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.booking-btn:hover {
+  background-color: #387839; /* Darker green on hover */
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .booking-form-wrapper {
+    padding: 25px 20px;
+  }
+  .booking-header h2 {
+    font-size: 26px;
+  }
 }
