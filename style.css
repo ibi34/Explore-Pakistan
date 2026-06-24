@@ -76,6 +76,7 @@ nav {
 }
 
 .content{
+    text-align: center;
     position: relative;
    padding-top: 50px;
    padding-bottom: 50px;
@@ -85,6 +86,7 @@ nav {
     z-index: 2;
 }
 .content h1 {
+    
     font-size: clamp(2rem, 5vw, 4rem);
     font-weight: bold;
     margin-bottom: 1rem;
@@ -520,10 +522,10 @@ nav {
 }
 
 .booking-btn:hover {
-  background-color: #387839; /* Darker green on hover */
+  background-color: #387839; 
 }
 
-/* Responsive adjustments for mobile */
+
 @media (max-width: 768px) {
   .booking-form-wrapper {
     padding: 25px 20px;
@@ -531,4 +533,21 @@ nav {
   .booking-header h2 {
     font-size: 26px;
   }
+}
+
+
+
+
+
+/* Jo element chupana hai uski class (Start State) */
+.scroll-hidden {
+    opacity: 0; /* Shuru mein element bilkul gayab hoga */
+    transform: translateY(50px); /* Element apni asli jagah se 50px neeche hoga */
+    transition: all 0.8s ease-out; /* 0.8 seconds mein smooth animation hogi */
+}
+
+/* Jo element screen par aanay ke baad show hoga (End State) */
+.scroll-show {
+    opacity: 1; /* Element wazeh ho jayega */
+    transform: translateY(0); /* Wapis apni asli jagah (0) par aayega */
 }

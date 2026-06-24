@@ -37,12 +37,12 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="azad.html">Azad Kashmir Tours</a></li>
             <li><a class="dropdown-item" href="chitral.html">Chitral Valley Tours</a></li>
-            <li><a class="dropdown-item" href="#">Fairy Meadows Tours</a></li>
+            <li><a class="dropdown-item" href="fairy.html">Fairy Meadows Tours</a></li>
             <li><a class="dropdown-item" href="hunza.html">Hunza Valley Tours</a></li>
-            <li><a class="dropdown-item" href="#">Murree Tours</a></li>
-            <li><a class="dropdown-item" href="#">Naran Kaghan Tours</a></li>
-            <li><a class="dropdown-item" href="#">Skardu Valley Tours</a></li>
-            <li><a class="dropdown-item" href="#">Swat Valley Tours</a></li>
+            <li><a class="dropdown-item" href="murree.html">Murree Tours</a></li>
+            <li><a class="dropdown-item" href="naran.html">Naran Kaghan Tours</a></li>
+            <li><a class="dropdown-item" href="skardu.html">Skardu Valley Tours</a></li>
+            <li><a class="dropdown-item" href="swat.html">Swat Valley Tours</a></li>
           </ul>
         </li>
 
@@ -101,20 +101,22 @@
             <p>Fill out the form below and we'll arrange the perfect trip for you!</p>
           </div>
 
-          <form action="#" method="POST">
+          <!-- Updated Working Form -->
+          <form action="https://formspree.io/f/mlgygjql" method="POST">
             <div class="row">
               <div class="col-12 col-md-6 form-group">
                 <label>Full Name</label>
                 <div class="custom-input-box">
                   <i class="bi bi-person-fill"></i>
-                  <input type="text" placeholder="Ali Khan" required>
+                  <!-- 'name' attribute lazmi hai -->
+                  <input type="text" name="FullName" placeholder="Ali Khan" required>
                 </div>
               </div>
               <div class="col-12 col-md-6 form-group">
                 <label>Email Address</label>
                 <div class="custom-input-box">
                   <i class="bi bi-envelope-fill"></i>
-                  <input type="email" placeholder="name@example.com" required>
+                  <input type="email" name="Email" placeholder="name@example.com" required>
                 </div>
               </div>
             </div>
@@ -124,23 +126,23 @@
                 <label>Phone Number</label>
                 <div class="custom-input-box">
                   <i class="bi bi-telephone-fill"></i>
-                  <input type="tel" placeholder="+92 300 0000000" required>
+                  <input type="tel" name="Phone" placeholder="+92 300 0000000" required>
                 </div>
               </div>
               <div class="col-12 col-md-6 form-group">
                 <label>Destination</label>
                 <div class="custom-input-box">
                   <i class="bi bi-geo-alt-fill"></i>
-                  <select required>
+                  <select name="Destination" required>
                     <option value="" selected disabled>Select Destination...</option>
-                    <option value="hunza">Hunza Valley</option>
-                    <option value="skardu">Skardu Valley</option>
-                    <option value="naran">Naran Kaghan</option>
-                    <option value="swat">Swat Valley</option>
-                    <option value="fairy_meadows">Fairy Meadows</option>
-                    <option value="murree">Murree</option>
-                    <option value="azad_kashmir">Azad Kashmir</option>
-                    <option value="chitral">Chitral Valley</option>
+                    <option value="Hunza Valley">Hunza Valley</option>
+                    <option value="Skardu Valley">Skardu Valley</option>
+                    <option value="Naran Kaghan">Naran Kaghan</option>
+                    <option value="Swat Valley">Swat Valley</option>
+                    <option value="Fairy Meadows">Fairy Meadows</option>
+                    <option value="Murree">Murree</option>
+                    <option value="Azad Kashmir">Azad Kashmir</option>
+                    <option value="Chitral Valley">Chitral Valley</option>
                   </select>
                 </div>
               </div>
@@ -151,14 +153,14 @@
                 <label>Travel Date</label>
                 <div class="custom-input-box">
                   <i class="bi bi-calendar-event-fill"></i>
-                  <input type="date" required>
+                  <input type="date" name="TravelDate" required>
                 </div>
               </div>
               <div class="col-12 col-md-6 form-group">
                 <label>Number of Travelers</label>
                 <div class="custom-input-box">
                   <i class="bi bi-people-fill"></i>
-                  <input type="number" min="1" placeholder="e.g., 2" required>
+                  <input type="number" name="Travelers" min="1" placeholder="e.g., 2" required>
                 </div>
               </div>
             </div>
@@ -168,7 +170,7 @@
                 <label>Special Requests (Optional)</label>
                 <div class="custom-input-box">
                   <i class="bi bi-chat-text-fill textarea-icon"></i>
-                  <textarea rows="3" placeholder="Any specific requirements for your trip?"></textarea>
+                  <textarea name="SpecialRequests" rows="3" placeholder="Any specific requirements for your trip?"></textarea>
                 </div>
               </div>
             </div>
