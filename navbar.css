@@ -1,0 +1,254 @@
+/* ===== CUSTOM NAVBAR ===== */
+#ep-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: #fff;
+  z-index: 1060;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  transform: translateY(0);
+  transition: transform 0.35s ease;
+}
+
+#ep-navbar.nav-hidden {
+  transform: translateY(-100%);
+}
+
+/* Logo */
+#ep-navbar .ep-logo img {
+  height: 70px;
+  display: block;
+}
+
+/* Desktop Links */
+#ep-navbar .ep-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#ep-navbar .ep-links a {
+  font-size: 18px;
+  font-weight: 700;
+  color: #49954b;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+#ep-navbar .ep-links a:hover {
+  color: #1b6439;
+}
+
+/* Dropdown */
+#ep-navbar .ep-dropdown {
+  position: relative;
+}
+
+#ep-navbar .ep-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  min-width: 200px;
+  padding: 8px 0;
+  list-style: none;
+  margin: 0;
+  z-index: 200;
+}
+
+#ep-navbar .ep-dropdown:hover .ep-dropdown-menu {
+  display: block;
+}
+
+#ep-navbar .ep-dropdown-menu li a {
+  display: block;
+  padding: 9px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+#ep-navbar .ep-dropdown-menu li a:hover {
+  background: #f0f9f0;
+  color: #49954b;
+}
+
+/* Dropdown arrow */
+#ep-navbar .ep-dropdown > a::after {
+  content: ' ▾';
+  font-size: 12px;
+}
+
+/* Search */
+#ep-navbar .ep-search-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+#ep-navbar .ep-search-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+
+#ep-navbar .ep-search-input {
+  width: 0;
+  opacity: 0;
+  padding: 5px 10px;
+  border: 1.5px solid #49954b;
+  border-radius: 20px;
+  font-size: 14px;
+  transition: width 0.3s ease, opacity 0.3s ease;
+  margin-left: 5px;
+  outline: none;
+}
+
+#ep-navbar .ep-search-wrapper.active .ep-search-input {
+  width: 150px;
+  opacity: 1;
+}
+
+/* Hamburger button - mobile only */
+#ep-navbar .ep-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: 2px solid #49954b;
+  border-radius: 6px;
+  padding: 8px 10px;
+  z-index: 1100;
+}
+
+#ep-navbar .ep-hamburger span {
+  width: 22px;
+  height: 2px;
+  background: #49954b;
+  display: block;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* ===== MOBILE SIDE DRAWER ===== */
+#ep-drawer-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 1070;
+}
+
+#ep-drawer-overlay.open {
+  display: block;
+}
+
+#ep-drawer {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 280px;
+  height: 100%;
+  background: #fff;
+  z-index: 1080;
+  padding: 70px 0 30px;
+  box-shadow: -4px 0 20px rgba(0,0,0,0.15);
+  transition: right 0.35s ease;
+  overflow-y: auto;
+}
+
+#ep-drawer.open {
+  right: 0;
+}
+
+#ep-drawer .ep-drawer-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 26px;
+  color: #49954b;
+  cursor: pointer;
+  line-height: 1;
+}
+
+#ep-drawer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#ep-drawer > ul > li > a,
+#ep-drawer > ul > li > span {
+  display: block;
+  padding: 14px 28px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #49954b;
+  text-decoration: none;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+}
+
+#ep-drawer > ul > li > span::after {
+  content: ' ▾';
+  font-size: 12px;
+}
+
+#ep-drawer .ep-drawer-sub {
+  display: none;
+  background: #f9f9f9;
+}
+
+#ep-drawer .ep-drawer-sub.open {
+  display: block;
+}
+
+#ep-drawer .ep-drawer-sub li a {
+  display: block;
+  padding: 10px 44px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+  transition: color 0.2s;
+}
+
+#ep-drawer .ep-drawer-sub li a:hover {
+  color: #49954b;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 991px) {
+  #ep-navbar .ep-links {
+    display: none;
+  }
+
+  #ep-navbar .ep-hamburger {
+    display: flex;
+  }
+
+  #ep-navbar {
+    padding: 0 20px;
+  }
+}
