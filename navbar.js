@@ -12,7 +12,7 @@
     <li><a href="#">Deals</a></li>
 
     <li class="ep-dropdown">
-      <a href="#">Destinations</a>
+      <a href="#">Destinations <span class="ep-arrow">▾</span></a>
       <ul class="ep-dropdown-menu">
         <li><a href="azad.html">Azad Kashmir Tours</a></li>
         <li><a href="chitral.html">Chitral Valley Tours</a></li>
@@ -26,7 +26,7 @@
     </li>
 
     <li class="ep-dropdown">
-      <a href="#">Tour Type</a>
+      <a href="#">Tour Type <span class="ep-arrow">▾</span></a>
       <ul class="ep-dropdown-menu">
         <li><a href="#">Family Tours</a></li>
         <li><a href="#">Honeymoon Tours</a></li>
@@ -111,6 +111,28 @@
     }
     lastY = currentY;
   }, { passive: true });
+
+  // ── Dropdown click toggle ────────────────────────────────────
+  document.querySelectorAll('#ep-navbar .ep-dropdown > a').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var parent = this.closest('.ep-dropdown');
+      var isOpen = parent.classList.contains('open');
+      // close all
+      document.querySelectorAll('#ep-navbar .ep-dropdown').forEach(function (d) {
+        d.classList.remove('open');
+      });
+      if (!isOpen) parent.classList.add('open');
+    });
+  });
+
+  // close dropdown when clicking outside
+  document.addEventListener('click', function () {
+    document.querySelectorAll('#ep-navbar .ep-dropdown').forEach(function (d) {
+      d.classList.remove('open');
+    });
+  });
 
   // ── Search toggle ─────────────────────────────────────────────
   const searchWrapper = document.querySelector('.ep-search-wrapper');
