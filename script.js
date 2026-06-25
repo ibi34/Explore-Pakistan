@@ -31,11 +31,15 @@ const navbar = document.querySelector('nav');
 
 window.addEventListener('scroll', () => {
   const currentScrollY = window.scrollY;
-  if (currentScrollY > lastScrollY && currentScrollY > 80) {
-    navbar.classList.add('nav-hidden');
-  } else {
+
+  if (currentScrollY < lastScrollY) {
+    // Scroll up - foran show karo
     navbar.classList.remove('nav-hidden');
+  } else if (currentScrollY > lastScrollY && currentScrollY > 80) {
+    // Scroll down - hide karo
+    navbar.classList.add('nav-hidden');
   }
+
   lastScrollY = currentScrollY;
 });
 
