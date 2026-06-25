@@ -4,9 +4,6 @@
     box-sizing: border-box;
 }
 
-body {
-  padding-top: 90px;
-}
 
 
 nav {
@@ -19,7 +16,7 @@ nav {
 }
 
 nav.nav-hidden {
-  top: -120px;
+  top: -150px;
 }
 
 
