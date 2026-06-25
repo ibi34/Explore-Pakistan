@@ -27,20 +27,23 @@
 // Navbar scroll hide/show
 // ========================
 let lastScrollY = window.scrollY;
+let ticking = false;
 const navbar = document.querySelector('nav');
 
 window.addEventListener('scroll', () => {
-  const currentScrollY = window.scrollY;
-
-  if (currentScrollY < lastScrollY) {
-    // Scroll up - foran show karo
-    navbar.classList.remove('nav-hidden');
-  } else if (currentScrollY > lastScrollY && currentScrollY > 80) {
-    // Scroll down - hide karo
-    navbar.classList.add('nav-hidden');
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY < lastScrollY) {
+        navbar.classList.remove('nav-hidden');
+      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        navbar.classList.add('nav-hidden');
+      }
+      lastScrollY = currentScrollY;
+      ticking = false;
+    });
+    ticking = true;
   }
-
-  lastScrollY = currentScrollY;
 });
 
 // ========================
