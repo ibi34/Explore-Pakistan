@@ -23,7 +23,48 @@
   });
 
 
-  // 1. Sab se pehle un sab elements ko pakro jin par 'scroll-hidden' class lagi hai
+  // ========================
+// Navbar scroll hide/show
+// ========================
+let lastScrollY = window.scrollY;
+const navbar = document.querySelector('nav');
+
+window.addEventListener('scroll', () => {
+  const currentScrollY = window.scrollY;
+  if (currentScrollY > lastScrollY && currentScrollY > 80) {
+    navbar.classList.add('nav-hidden');
+  } else {
+    navbar.classList.remove('nav-hidden');
+  }
+  lastScrollY = currentScrollY;
+});
+
+// ========================
+// Mobile right-side drawer
+// ========================
+const toggler = document.querySelector('.navbar-toggler');
+const navCollapse = document.querySelector('.navbar-collapse');
+
+if (toggler && navCollapse) {
+  // Overlay element banao
+  const overlay = document.createElement('div');
+  overlay.classList.add('nav-overlay');
+  document.body.appendChild(overlay);
+
+  toggler.addEventListener('click', () => {
+    navCollapse.classList.toggle('show');
+    overlay.classList.toggle('active');
+    document.body.style.overflow = navCollapse.classList.contains('show') ? 'hidden' : '';
+  });
+
+  overlay.addEventListener('click', () => {
+    navCollapse.classList.remove('show');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+}
+
+// 1. Sab se pehle un sab elements ko pakro jin par 'scroll-hidden' class lagi hai
 const hiddenElements = document.querySelectorAll('.scroll-hidden');
 
 // 2. Chowkidar (Observer) banao
