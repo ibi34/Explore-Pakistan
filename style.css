@@ -37,7 +37,7 @@
 
 .firstsection {
     position: relative;
-    height: 60vh;
+    min-height: 60vh;
     width: 100%;
     overflow: hidden;
     background: url('imges/first\ section.jpg') center/cover no-repeat;
