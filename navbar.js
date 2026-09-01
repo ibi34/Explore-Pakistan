@@ -177,9 +177,18 @@
     }
 
     searchSuggestions.innerHTML = matches.map(function (d) {
-      return '<li data-page="' + d.page + '">' + d.name + '</li>';
+      return '<li data-page="' + d.page + '">' + highlightMatch(d.name, q) + '</li>';
     }).join('');
     searchSuggestions.classList.add('active');
+  }
+
+  function escapeRegExp(str) {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  function highlightMatch(name, q) {
+    const regex = new RegExp('(' + escapeRegExp(q) + ')', 'ig');
+    return name.replace(regex, '<mark>$1</mark>');
   }
 
   if (searchInput) {

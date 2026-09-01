@@ -191,6 +191,14 @@
   color: #999;
 }
 
+#ep-navbar .ep-search-suggestions li mark {
+  background: #d7f0d9;
+  color: #49954b;
+  font-weight: 700;
+  padding: 0 1px;
+  border-radius: 2px;
+}
+
 /* Hamburger button - mobile only */
 #ep-navbar .ep-hamburger {
   display: none;
