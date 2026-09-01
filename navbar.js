@@ -46,7 +46,8 @@
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
         </button>
-        <input class="ep-search-input" type="text" placeholder="Search...">
+        <input class="ep-search-input" type="text" placeholder="Search..." autocomplete="off">
+        <ul class="ep-search-suggestions"></ul>
       </div>
     </li>
   </ul>
@@ -137,16 +138,84 @@
   // ── Search toggle ─────────────────────────────────────────────
   const searchWrapper = document.querySelector('.ep-search-wrapper');
   const searchBtn = document.querySelector('.ep-search-btn');
+  const searchInput = document.querySelector('.ep-search-input');
+  const searchSuggestions = document.querySelector('.ep-search-suggestions');
+
+  const destinations = [
+    { name: 'Hunza Valley', page: 'hunza.html' },
+    { name: 'Skardu Valley', page: 'skardu.html' },
+    { name: 'Naran Kaghan', page: 'naran.html' },
+    { name: 'Swat Valley', page: 'swat.html' },
+    { name: 'Fairy Meadows', page: 'fairy.html' },
+    { name: 'Murree', page: 'murree.html' },
+    { name: 'Azad Kashmir', page: 'azad.html' },
+    { name: 'Chitral Valley', page: 'chitral.html' }
+  ];
+
+  function closeSuggestions() {
+    if (searchSuggestions) {
+      searchSuggestions.innerHTML = '';
+      searchSuggestions.classList.remove('active');
+    }
+  }
+
+  function renderSuggestions(query) {
+    if (!searchSuggestions) return;
+    const q = query.trim().toLowerCase();
+    if (!q) {
+      closeSuggestions();
+      return;
+    }
+    const matches = destinations
+      .filter(function (d) { return d.name.toLowerCase().includes(q); })
+      .slice(0, 5);
+
+    if (matches.length === 0) {
+      searchSuggestions.innerHTML = '<li class="ep-no-result">No destination found</li>';
+      searchSuggestions.classList.add('active');
+      return;
+    }
+
+    searchSuggestions.innerHTML = matches.map(function (d) {
+      return '<li data-page="' + d.page + '">' + d.name + '</li>';
+    }).join('');
+    searchSuggestions.classList.add('active');
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', function () {
+      renderSuggestions(this.value);
+    });
+
+    searchInput.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') {
+        const q = this.value.trim().toLowerCase();
+        const match = destinations.find(function (d) { return d.name.toLowerCase().includes(q); });
+        if (match) window.location.href = match.page;
+      }
+    });
+  }
+
+  if (searchSuggestions) {
+    searchSuggestions.addEventListener('click', function (e) {
+      const li = e.target.closest('li[data-page]');
+      if (li) window.location.href = li.getAttribute('data-page');
+    });
+  }
+
   if (searchBtn) {
     searchBtn.addEventListener('click', function (e) {
       e.stopPropagation();
       searchWrapper.classList.toggle('active');
       if (searchWrapper.classList.contains('active')) {
         searchWrapper.querySelector('.ep-search-input').focus();
+      } else {
+        closeSuggestions();
       }
     });
     document.addEventListener('click', function () {
       searchWrapper.classList.remove('active');
+      closeSuggestions();
     });
     searchWrapper.addEventListener('click', function (e) {
       e.stopPropagation();
